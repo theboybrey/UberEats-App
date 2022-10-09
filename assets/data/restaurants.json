@@ -4,14 +4,14 @@
   "deliveryFee": 1.40,
   "minDeliveryTime": 25,
   "maxDeliveryTime": 35,
-  "rating": 4.0,
+  "rating": 3.9,
   "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
   "dishes": [
     {
       "name": "Cheese Tequeños",
       "description": "6 pieces of chese with sauce.",
       "price": 6.90,
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg"
     },
     {
       "name": "Hamburger La Super Cabo Burger",
@@ -58,7 +58,7 @@
       "name": "Carolina Honey",
       "description": "Our famous ribs marinated with our Carolina honey sauce, a mixture of honey with our original sauce. Ideal for those looking for a sweet touch. Served with French fries and coleslaw.",
       "price": 18.95,
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg"
     },
     {
       "name": "Onion Rings",

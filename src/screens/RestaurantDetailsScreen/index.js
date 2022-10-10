@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     menuCaption: {
-        fontWeight: '600',
+        fontWeight: 'bold',
         fontSize: 16,
         color: 'green',
         marginTop: -5,
-        marginBottom: 0,
+        marginBottom: 1,
         paddingLeft: 15,
         textTransform: 'uppercase',
         lineHeight: 25,

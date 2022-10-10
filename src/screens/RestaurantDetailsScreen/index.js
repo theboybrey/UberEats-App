@@ -4,7 +4,7 @@ import restaurants from '../../../assets/data/restaurants.json';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { StatusBar } from "expo-status-bar";
 
-const restaurant = restaurants[0];
+const restaurant = restaurants[2];
 
 const RestaurantDetailPage = () => {
     return (
@@ -29,6 +29,7 @@ const RestaurantDetailPage = () => {
             
             <FlatList 
             data={restaurant.dishes}
+            showsVerticalScrollIndicator={false}
             renderItem={({item})=> <DishListItem dish={item}/>}
             ></FlatList>
 

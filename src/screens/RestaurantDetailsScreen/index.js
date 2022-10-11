@@ -4,7 +4,7 @@ import restaurants from '../../../assets/data/restaurants.json';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { StatusBar } from "expo-status-bar";
 
-const restaurant = restaurants[2];
+const restaurant = restaurants[0];
 
 const RestaurantDetailPage = () => {
     return (
@@ -26,14 +26,15 @@ const RestaurantDetailPage = () => {
                 <Text style={styles.subtitle}>USD {restaurant.deliveryFee} &#8226; {restaurant.minDeliveryTime}-{restaurant.maxDeliveryTime}mins</Text>
             </View>
             <Text style={styles.menuCaption}>View Today's Menu</Text>
-            
-            <FlatList 
-            data={restaurant.dishes}
-            showsVerticalScrollIndicator={false}
-            renderItem={({item})=> <DishListItem dish={item}/>}
-            ></FlatList>
 
             <StatusBar style="light" />
+
+            <FlatList
+                data={restaurant.dishes}
+                showsVerticalScrollIndicator={false}
+                renderItem={({ item }) => <DishListItem dish={item} />}
+            ></FlatList>
+
         </View>
 
 
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         margin: 15,
+    
     },
     detailRating: {
         marginLeft: 'auto',

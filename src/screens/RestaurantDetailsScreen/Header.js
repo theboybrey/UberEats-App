@@ -14,7 +14,7 @@ const Header = () => {
              {/* Ratings on the Detailed Page */}
              <View style={styles.detailRating}>
                 <Text style={styles.ratings}>{restaurant.rating}</Text>
-            </View>ss
+            </View>
 
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{restaurant.name}</Text>

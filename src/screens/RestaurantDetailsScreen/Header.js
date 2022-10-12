@@ -6,13 +6,13 @@ import { StatusBar } from "expo-status-bar";
 
 const restaurant = restaurants[0];
 
-const Header = () => {
+const RestaurantDetailPage = () => {
     return (
         <View style={styles.page}>
             <Image source={{ uri: restaurant.image }} style={styles.image}></Image>
 
-             {/* Ratings on the Detailed Page */}
-             <View style={styles.detailRating}>
+            {/* Ratings on the Detailed Page */}
+            <View style={styles.detailRating}>
                 <Text style={styles.ratings}>{restaurant.rating}</Text>
             </View>
 
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         position: 'absolute',
         left: '75%',
-        top: '23%',
+        top: '50%',
     },
     ratings: {
         fontWeight: 'bold',
@@ -95,4 +95,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Header;
+export default RestaurantDetailPage;

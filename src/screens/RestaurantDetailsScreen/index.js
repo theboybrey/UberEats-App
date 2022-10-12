@@ -3,13 +3,13 @@ import DishListItem from "../../components/DishListItem";
 import restaurants from '../../../assets/data/restaurants.json';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { StatusBar } from "expo-status-bar";
-import { Header } from "./Header";
+import Header from './Header'
 
 const restaurant = restaurants[0];
 const RestaurantDetailPage = () => {
     return (
         <View style={styles.page}>
-            <StatusBar style="auto" />
+            <StatusBar style="light" />
 
             <FlatList
                 ListHeaderComponent={Header}
@@ -17,6 +17,11 @@ const RestaurantDetailPage = () => {
                 showsVerticalScrollIndicator={false}
                 renderItem={({ item }) => <DishListItem dish={item} />}
             ></FlatList>
+
+            {/* Back Icon */}
+            <View style={styles.iconContainer}>
+                <Ionicons name="arrow-back-circle" size={45} color="white" />
+            </View>
 
         </View>
 

@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, FlatList } from 'react-native'
 import orders from '../../../assets/data/orders.json'
+import restaurants from '../../../assets/data/restaurants.json'
+import DishListItem from '../../components/DishListItem';
 import styles from './styles';
 
 const order = orders[0];
 
-const OrderDetails = () => {
+const OrderDetailsHeader = () => {
     return (
         <View>
             <StatusBar style="light" />
@@ -31,6 +33,17 @@ const OrderDetails = () => {
 
         </View>
     )
-}
+};
+
+const OrderDetails = () => {
+    return(
+        <FlatList 
+        ListHeaderComponent={OrderDetailsHeader}
+        data={restaurants[0].dishes} 
+        renderItem={({item}) => <DishListItem dish={item}/>}>
+
+        </FlatList>
+    )
+};
 
 export default OrderDetails

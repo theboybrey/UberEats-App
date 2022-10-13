@@ -1,11 +1,13 @@
     import { View, Text, FlatList } from 'react-native'
-    import Orders from '../../../assets/data/orders.json'
+    import orders from '../../../assets/data/orders.json'
     import OrderListItem from '../../components/OrderListItem'
     
     const OrderScreen = () => {
       return (
-        <View>
-          <FlatList data={}></FlatList>
+        <View style={{flex: 1, width: '100%', paddingTop: 50,}}>
+          <FlatList 
+          data={orders}
+          renderItem={({item}) =>  <OrderListItem order={item}/>}/>
 
         </View>
       )

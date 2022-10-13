@@ -8,14 +8,21 @@ const dish = restaurants[0].dishes[0];
 const DishDetailScreen = () => {
     const [quantity, setQuantity] = useState(1);
 
+    // On Subtract function
     const onMinus = () => {
         if (quantity > 1) {
             setQuantity(quantity - 1)
         }
     }
 
+    // On Add Function
     const onPlus = () => {
         setQuantity(quantity + 1)
+    }
+
+    //Total Price
+    const getTotal = () => {
+        return (dish.price * quantity).toFixed(2);
     }
 
     return (
@@ -28,6 +35,9 @@ const DishDetailScreen = () => {
                 <AntDesign name="minus" size={45} color="#000" onPress={onMinus} />
                 <Text style={styles.quantity}>{quantity}</Text>
                 <AntDesign name="plus" size={40} color="#000" onPress={onPlus} />
+            </View>
+            <View style={styles.totalPrice}> 
+                <Text style={styles.textPrice}>USD {getTotal()}</Text>
             </View>
 
             <View style={styles.button}>
@@ -59,7 +69,7 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor: 'lightgrey',
         marginVertical: 10,
-        // borderRadius: 20,
+        borderRadius: 20,
     },
     row: {
         flexDirection: 'row',
@@ -72,6 +82,22 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#696969',
         marginHorizontal: 20,
+    },
+    totalPrice:{
+        width: '50%',
+        borderRadius: 20,
+        padding: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'flex-end',
+        left: '25%',
+        marginVertical: 10,
+    },
+    textPrice:{
+        fontWeight: '600',
+        fontSize: 18,
+        textTransform: 'uppercase',
+        color: '#696969'
     },
     button:{
         backgroundColor: 'black',

@@ -7,6 +7,9 @@ import Basket from '../screens/Basket';
 import OrderScreen from '../screens/OrderScreen';
 import OrderDetails from '../screens/OrderDetails';
 import { Foundation } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+// import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,25 +30,25 @@ const RootNavigator = () => {
 const Tab = createMaterialBottomTabNavigator();
 const HomeTabs = () => {
     return (
-        <Tab.Navigator>
-            <Tab.Screen  
-            name='Home' 
-            component={HomeScreen} 
-            options={{
-                tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
-                }}/>
-            <Tab.Screen  
-            name='Orders' 
-            component={OrderScreen}
-            options={{
-                tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
+        <Tab.Navigator screenOptions={{ tabBarStyle: { backgroundColor: 'white' } }}>
+            <Tab.Screen
+                name='Home'
+                component={HomeScreen}
+                options={{
+                    tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />
+                }} />
+            <Tab.Screen
+                name='Orders'
+                component={OrderScreen}
+                options={{
+                    tabBarIcon: ({ color }) => <FontAwesome name="shopping-basket" size={24} color={color} />
                 }}
             />
-            <Tab.Screen  
-            name='Profile' 
-            component={OrderDetails}
-            options={{
-                tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
+            <Tab.Screen
+                name='Profile'
+                component={OrderDetails}
+                options={{
+                    tabBarIcon: ({ color }) => <FontAwesome name="user" size={24} color={color} />
                 }}
             />
         </Tab.Navigator>

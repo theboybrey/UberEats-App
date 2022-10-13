@@ -3,7 +3,7 @@ import restaurants from "../../../assets/data/restaurants.json";
 import { AntDesign } from '@expo/vector-icons';
 import { useState } from "react";
 
-const dish = restaurants[0].dishes[0];
+const restaurant = restaurants[0];
 
 const Basket = () => {
     const [quantity, setQuantity] = useState(1);
@@ -27,29 +27,11 @@ const Basket = () => {
 
     return (
         <View style={styles.page}>
-            <Text style={styles.name}>{dish.name}</Text>
-            <Text style={styles.description}>{dish.description}</Text>
+            <Text style={styles.name} numberOfLines={1}>{restaurant.name}</Text>
             <View style={styles.separator} />
 
-            <View style={styles.row}>
-                <AntDesign
-                    name="minus"
-                    size={45}
-                    color="#000"
-                    onPress={onMinus} />
-                <Text style={styles.quantity}>{quantity}</Text>
-                <AntDesign 
-                name="plus" 
-                size={40} 
-                color="#000" 
-                onPress={onPlus} />
-            </View>
-            <View style={styles.totalPrice}>
-                <Text style={styles.textPrice}>USD {getTotal()}</Text>
-            </View>
-
             <View style={styles.button}>
-                <Text style={styles.buttonText}>Add {quantity} Items To Basket </Text>
+                <Text style={styles.buttonText}>Place Order Now</Text>
             </View>
         </View>
 
@@ -64,14 +46,12 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     name: {
-        fontSize: 30,
+        fontSize: 24,
         fontWeight: '600',
-        marginVertical: 10,
-        textAlign: 'center',
+        marginVertical: 15,
     },
     description: {
         color: '#696969',
-        textAlign: 'center'
     },
     separator: {
         height: 1,
@@ -112,7 +92,7 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
         padding: 20,
         alignItems: 'center',
-        borderRadius: 50,
+        borderRadius: 20,
     },
     buttonText: {
         color: 'white',

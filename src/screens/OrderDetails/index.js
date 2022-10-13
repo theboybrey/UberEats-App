@@ -4,6 +4,7 @@ import orders from '../../../assets/data/orders.json'
 import restaurants from '../../../assets/data/restaurants.json'
 import DishListItem from '../../components/DishListItem';
 import OrderListItem from '../../components/OrderListItem';
+import BasketDishItem from '../../components/BasketDishItem';
 import styles from './styles';
 
 const order = orders[0];
@@ -11,7 +12,7 @@ const order = orders[0];
 const OrderDetailsHeader = () => {
     return (
         <View>
-            <StatusBar style="light" />
+             <StatusBar style="light" />
 
             <View style={styles.page}>
                 <Image source={{ uri: order.Restaurant.image }} style={styles.image}></Image>
@@ -41,7 +42,7 @@ const OrderDetails = () => {
         <FlatList 
         ListHeaderComponent={OrderDetailsHeader}
         data={restaurants[0].dishes} 
-        renderItem={({item}) => <OrderListItem dish = {item}/>}>
+        renderItem={({item}) => <BasketDishItem basketDish= {item}/>}>
 
         </FlatList>
     )

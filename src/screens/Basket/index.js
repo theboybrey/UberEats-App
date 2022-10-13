@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
+import BasketDishItem from '../../components/BasketDishItem';
 import restaurants from "../../../assets/data/restaurants.json";
-import { AntDesign } from '@expo/vector-icons';
-import { useState } from "react";
+
 
 const restaurant = restaurants[0];
 

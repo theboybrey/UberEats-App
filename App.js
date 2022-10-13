@@ -7,21 +7,22 @@ import Basket from './src/screens/Basket';
 import OrderScreen from './src/screens/OrderScreen';
 import OrderDetails from './src/screens/OrderDetails';
 
-
-
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <HomeScreen/> */}
-      {/* <RestaurantDetailPage/> */}
-      {/* <DishDetailScreen/> */}
-      {/* <Basket/> */}
-      {/* <OrderScreen/> */}
+    <NavigationContainer>
+      <View style={styles.container}>
+        {/* <HomeScreen/> */}
+        {/* <RestaurantDetailPage/> */}
+        {/* <DishDetailScreen/> */}
+        {/* <Basket/> */}
+        {/* <OrderScreen/> */}
 
-      <OrderDetails />
-      <StatusBar style="auto" />
-    </View>
+        <OrderDetails />
+        <StatusBar style="auto" />
+      </View>
+    </NavigationContainer>
   );
 }
 

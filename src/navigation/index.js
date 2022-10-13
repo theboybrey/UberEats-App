@@ -16,6 +16,8 @@ const RootNavigator = () => {
             name="Restaurants" 
             component={RestaurantDetailPage} 
             options={{headerShown: false}}/>
+            <Stack.Screen name="Order" component={Basket}/>
+            {/* <Stack.Screen name="" component={}/> */}
         </Stack.Navigator>
     )
 }

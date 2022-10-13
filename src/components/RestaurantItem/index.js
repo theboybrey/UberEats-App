@@ -8,8 +8,10 @@ const RestaurantItem = ({ restaurant }) => {
     const navigation = useNavigation();
 
     const onPress = () => {
-        console.warn('Press')
+        navigation.navigate("Restaurants", {id: restaurant.id })
     }
+
+    
 
     return (
         <Pressable  onPress={onPress} style={styles.restaurantContainer}>

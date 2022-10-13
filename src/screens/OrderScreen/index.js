@@ -4,7 +4,7 @@
     const OrderScreen = () => {
       return (
         <View>
-          <Text>OrderScreen</Text>
+          <Text>Order Screen</Text>
         </View>
       )
     }

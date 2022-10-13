@@ -6,6 +6,7 @@ import DishDetailScreen from '../screens/DishDetailScreen';
 import Basket from '../screens/Basket';
 import OrderScreen from '../screens/OrderScreen';
 import OrderDetails from '../screens/OrderDetails';
+import { Foundation } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,4 +24,32 @@ const RootNavigator = () => {
     )
 }
 
-export default RootNavigator; 
+const Tab = createMaterialBottomTabNavigator();
+const HomeTabs = () => {
+    return (
+        <Tab.Navigator>
+            <Tab.Screen  
+            name='Home' 
+            component={HomeScreen} 
+            options={{
+                tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
+                }}/>
+            <Tab.Screen  
+            name='Orders' 
+            component={OrderScreen}
+            options={{
+                tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
+                }}
+            />
+            <Tab.Screen  
+            name='Profile' 
+            component={OrderDetails}
+            options={{
+                tabBarIcon: ({color}) => <Foundation name="home" size={24} color={color} />
+                }}
+            />
+        </Tab.Navigator>
+    )
+}
+
+export default HomeTabs; 

@@ -39,7 +39,7 @@ export default StyleSheet.create({
         borderRadius: 15,
         position: 'absolute',
         left: '75%',
-        top: '23%',
+        top: '50%',
     },
     ratings: {
         fontWeight: 'bold',

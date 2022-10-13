@@ -1,10 +1,18 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 
 // Restaurant Card Item
 const RestaurantItem = ({ restaurant }) => {
+
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        console.warn('Press')
+    }
+
     return (
-        <View style={styles.restaurantContainer}>
+        <Pressable  onPress={onPress} style={styles.restaurantContainer}>
             <Image source={{
                 uri: restaurant.image
             }}
@@ -20,7 +28,7 @@ const RestaurantItem = ({ restaurant }) => {
                     <Text style={styles.rate}>{restaurant.rating}</Text>
                 </View>
             </View>
-        </View>
+        </Pressable>
 
     )
 }

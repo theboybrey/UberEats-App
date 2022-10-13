@@ -1,17 +1,23 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/HomeScreen';
-import RestaurantDetailPage from './src/screens/RestaurantDetailsScreen';
-import DishDetailScreen from './src/screens/DishDetailScreen';
-import Basket from './src/screens/Basket';
-import OrderScreen from './src/screens/OrderScreen';
-import OrderDetails from './src/screens/OrderDetails';
+import HomeScreen from '../screens/HomeScreen';
+import RestaurantDetailPage from '../screens/RestaurantDetailsScreen';
+import DishDetailScreen from '../screens/DishDetailScreen';
+import Basket from '../screens/Basket';
+import OrderScreen from '../screens/OrderScreen';
+import OrderDetails from '../screens/OrderDetails';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
     return(
-        <Stack.Navigator>
-            <Stack.Screen name />
+        <Stack.Navigator initialRouteName='Home'>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen 
+            name="Restaurants" 
+            component={RestaurantDetailPage} 
+            options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }
+
+export default RootNavigator; 

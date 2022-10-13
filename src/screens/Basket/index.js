@@ -5,17 +5,7 @@ import { useState } from "react";
 
 const restaurant = restaurants[0];
 
-const BasketDishItem = ({ basketDish }) => {
-    return (
-        <View style={styles.row}>
-            <View style={styles.qtyContainer}>
-                <Text>1</Text>
-            </View>
-            <Text style={{ fontWeight: "bold", letterSpacing: 0.8 }}>{basketDish.name}</Text>
-            <Text style={{ marginLeft: 'auto', fontWeight: '500' }}>USD {basketDish.price}</Text>
-        </View>
-    )
-}
+
 
 const Basket = () => {
     return (

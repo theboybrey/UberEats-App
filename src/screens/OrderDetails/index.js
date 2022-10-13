@@ -3,6 +3,7 @@ import { View, Text, Image, FlatList } from 'react-native'
 import orders from '../../../assets/data/orders.json'
 import restaurants from '../../../assets/data/restaurants.json'
 import DishListItem from '../../components/DishListItem';
+import OrderListItem from '../../components/OrderListItem';
 import styles from './styles';
 
 const order = orders[0];
@@ -40,7 +41,7 @@ const OrderDetails = () => {
         <FlatList 
         ListHeaderComponent={OrderDetailsHeader}
         data={restaurants[0].dishes} 
-        renderItem={({item}) => <DishListItem dish={item}/>}>
+        renderItem={({item}) => <OrderListItem dish = {item}/>}>
 
         </FlatList>
     )

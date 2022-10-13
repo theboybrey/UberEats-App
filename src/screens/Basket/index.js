@@ -1,33 +1,31 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import restaurants from "../../../assets/data/restaurants.json";
 import { AntDesign } from '@expo/vector-icons';
 import { useState } from "react";
 
 const restaurant = restaurants[0];
 
+const BasketDishItem = ({ basketDish }) => {
+    return (
+        <View style={styles.row}>
+            <View style={styles.qtyContainer}>
+                <Text>1</Text>
+            </View>
+            <Text style={{ fontWeight: "bold", letterSpacing: 0.8 }}>{basketDish.name}</Text>
+            <Text style={{ marginLeft: 'auto', fontWeight: '500' }}>USD {basketDish.price}</Text>
+        </View>
+    )
+}
+
 const Basket = () => {
-    const [quantity, setQuantity] = useState(1);
-
-    // On Subtract function
-    const onMinus = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1)
-        }
-    }
-
-    // On Add Function
-    const onPlus = () => {
-        setQuantity(quantity + 1)
-    }
-
-    //Total Price
-    const getTotal = () => {
-        return (dish.price * quantity).toFixed(2);
-    }
-
     return (
         <View style={styles.page}>
             <Text style={styles.name} numberOfLines={1}>{restaurant.name}</Text>
+
+            <Text style={styles.yourItems}>View Your Items</Text>
+
+            <FlatList data={restaurant.dishes} renderItem={({ item }) => <BasketDishItem basketDish={item} />} />
+
             <View style={styles.separator} />
 
             <View style={styles.button}>
@@ -62,8 +60,11 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: '65%',
+        marginVertical: 5,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        padding: 10,
+        borderRadius: 8
     },
     quantity: {
         fontSize: 25,
@@ -92,13 +93,30 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
         padding: 20,
         alignItems: 'center',
-        borderRadius: 20,
+        borderRadius: 50,
     },
     buttonText: {
         color: 'white',
         fontSize: 18,
         fontWeight: '600'
     },
+    yourItems: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: '#696969',
+        textAlign: 'left',
+        textTransform: 'uppercase',
+        marginBottom: 10,
+        marginTop: 10,
+    },
+    qtyContainer: {
+        backgroundColor: 'lightgrey',
+        paddingHorizontal: 5,
+        marginRight: 10,
+        paddingVertical: 2,
+        borderRadius: 5,
+    },
+
 });
 
 export default Basket;

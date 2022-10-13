@@ -13,9 +13,9 @@ export default function App() {
     <View style={styles.container}>
       {/* <HomeScreen/> */}
        {/* <RestaurantDetailPage/> */}
-      <DishDetailScreen/>
+      {/* <DishDetailScreen/> */}
 
-      {/* <Basket/> */}
+      <Basket/>
 
       <StatusBar style="auto" />
     </View>

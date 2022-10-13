@@ -32,11 +32,19 @@ const DishDetailScreen = () => {
             <View style={styles.separator} />
 
             <View style={styles.row}>
-                <AntDesign name="minus" size={45} color="#000" onPress={onMinus} />
+                <AntDesign
+                    name="minus"
+                    size={45}
+                    color="#000"
+                    onPress={onMinus} />
                 <Text style={styles.quantity}>{quantity}</Text>
-                <AntDesign name="plus" size={40} color="#000" onPress={onPlus} />
+                <AntDesign 
+                name="plus" 
+                size={40} 
+                color="#000" 
+                onPress={onPlus} />
             </View>
-            <View style={styles.totalPrice}> 
+            <View style={styles.totalPrice}>
                 <Text style={styles.textPrice}>USD {getTotal()}</Text>
             </View>
 
@@ -83,7 +91,7 @@ const styles = StyleSheet.create({
         color: '#696969',
         marginHorizontal: 20,
     },
-    totalPrice:{
+    totalPrice: {
         width: '50%',
         borderRadius: 20,
         padding: 15,
@@ -93,20 +101,20 @@ const styles = StyleSheet.create({
         left: '25%',
         marginVertical: 10,
     },
-    textPrice:{
+    textPrice: {
         fontWeight: '600',
         fontSize: 18,
         textTransform: 'uppercase',
         color: '#696969'
     },
-    button:{
+    button: {
         backgroundColor: 'black',
         marginTop: 'auto',
         padding: 20,
         alignItems: 'center',
         borderRadius: 50,
     },
-    buttonText:{
+    buttonText: {
         color: 'white',
         fontSize: 18,
         fontWeight: '600'

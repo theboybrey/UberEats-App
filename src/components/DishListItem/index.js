@@ -2,6 +2,8 @@ import { View, Image, StyleSheet, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const DishListItem = ({ dish }) => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={{ flex: 1 }}>

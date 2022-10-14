@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
     return (
-        <Stack.Navigator initialRouteName='Home'>
+        <Stack.Navigator screenOptions={{ headerShown: false }} >
             <Stack.Screen name="Home" component={HomeTabs} />
         </Stack.Navigator>
     )
@@ -57,6 +57,7 @@ const HomeStackNavigator = () => {
         <HomeStack.Navigator>
             <HomeStack.Screen name="Eatery" component={HomeScreen} />
             <HomeStack.Screen name="Restaurants" component={RestaurantDetailPage} />
+            <HomeStack.Screen name="Dish" component={DishDetailScreen} />
         </HomeStack.Navigator>
     )
 }

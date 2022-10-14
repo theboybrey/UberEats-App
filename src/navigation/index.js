@@ -17,12 +17,6 @@ const RootNavigator = () => {
     return (
         <Stack.Navigator initialRouteName='Home'>
             <Stack.Screen name="Home" component={HomeTabs} />
-            <Stack.Screen
-                name="Restaurants"
-                component={RestaurantDetailPage}
-                options={{ headerShown: false }} />
-            <Stack.Screen name="Order" component={Basket} />
-            {/* <Stack.Screen name="" component={}/> */}
         </Stack.Navigator>
     )
 }
@@ -30,10 +24,10 @@ const RootNavigator = () => {
 const Tab = createMaterialBottomTabNavigator();
 const HomeTabs = () => {
     return (
-        <Tab.Navigator barStyle={{backgroundColor: 'white'}}>
+        <Tab.Navigator barStyle={{ backgroundColor: 'white' }}>
             <Tab.Screen
                 name='Meals'
-                component={HomeScreen}
+                component={HomeStackNavigator}
                 options={{
                     tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />
                 }} />
@@ -52,6 +46,18 @@ const HomeTabs = () => {
                 }}
             />
         </Tab.Navigator>
+    )
+}
+
+
+const HomeStack = createNativeStackNavigator();
+
+const HomeStackNavigator = () => {
+    return (
+        <HomeStack.Navigator>
+            <HomeStack.Screen name="Eatery" component={HomeScreen} />
+            <HomeStack.Screen name="Restaurants" component={RestaurantDetailPage} />
+        </HomeStack.Navigator>
     )
 }
 

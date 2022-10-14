@@ -2,10 +2,10 @@ import { View, Image, Text, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 const OrderListItem = ({ order }) => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
 
     return (
-        <Pressable style={{ flexDirection: 'row', padding: 10, margin: 10, alignItems: 'center' }}>
+        <Pressable onPress={() => navigation.navigate('Order', {id: order.id})} style={{ flexDirection: 'row', padding: 10, margin: 10, alignItems: 'center' }}>
             <Image
                 source={{ uri: order.Restaurant.image }}
                 style={{ width: 75, height: 75, borderRadius: 10, marginRight: 10 }} />

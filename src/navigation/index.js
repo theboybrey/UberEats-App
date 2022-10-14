@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 const RootNavigator = () => {
     return (
         <Stack.Navigator initialRouteName='Home'>
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen
                 name="Restaurants"
                 component={RestaurantDetailPage}
@@ -30,9 +30,9 @@ const RootNavigator = () => {
 const Tab = createMaterialBottomTabNavigator();
 const HomeTabs = () => {
     return (
-        <Tab.Navigator screenOptions={{ tabBarStyle: { backgroundColor: 'white' } }}>
+        <Tab.Navigator barStyle={{backgroundColor: 'white'}}>
             <Tab.Screen
-                name='Home'
+                name='Meals'
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />
@@ -55,4 +55,4 @@ const HomeTabs = () => {
     )
 }
 
-export default HomeTabs; 
+export default RootNavigator; 

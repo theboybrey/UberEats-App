@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text, FlatList } from "react-native";
+import { View, Image, StyleSheet, Text, Pressable } from "react-native";
 
 
 const DishListItem = ({ dish }) => {

@@ -32,7 +32,7 @@ const HomeTabs = () => {
                     tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />
                 }} />
             <Tab.Screen
-                name='Orders'
+                name='Basket'
                 component={OrderScreen}
                 options={{
                     tabBarIcon: ({ color }) => <FontAwesome name="shopping-basket" size={24} color={color} />

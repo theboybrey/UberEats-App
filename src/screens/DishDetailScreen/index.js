@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import restaurants from "../../../assets/data/restaurants.json";
 import { AntDesign } from '@expo/vector-icons';
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const dish = restaurants[0].dishes[0];
 

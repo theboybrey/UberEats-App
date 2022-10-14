@@ -32,8 +32,8 @@ const HomeTabs = () => {
                     tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />
                 }} />
             <Tab.Screen
-                name='Basket'
-                component={OrderScreen}
+                name='Orders'
+                component={OrdersStackNavigator}
                 options={{
                     tabBarIcon: ({ color }) => <FontAwesome name="shopping-basket" size={24} color={color} />
                 }}
@@ -67,8 +67,8 @@ const OrdersStack = createNativeStackNavigator();
 const OrdersStackNavigator = () => {
     return (
         <OrdersStack.Navigator>
-            <OrdersStack.Screen name="Cafèteria" component={HomeScreen} />
-            <OrdersStack.Screen name="Restaurant" component={RestaurantDetailPage} />
+            <OrdersStack.Screen name="Orders" component={OrderScreen} />
+            <OrdersStack.Screen name="Order" component={OrderDetails} />
         </OrdersStack.Navigator>
     )
 }

@@ -5,7 +5,7 @@ const DishListItem = ({ dish }) => {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
+        <Pressable onPress={} style={styles.container}>
             <View style={{ flex: 1 }}>
                 <Text style={styles.name}>{dish.name}</Text>
                 <Text style={styles.description} numberOfLines={2}>{dish.description}</Text>
@@ -13,7 +13,7 @@ const DishListItem = ({ dish }) => {
             </View>
             {dish.image && (<Image source={{ uri: dish.image }} style={styles.image}></Image>)}
 
-        </View>
+        </Pressable>
     )
 }
 

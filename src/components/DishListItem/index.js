@@ -1,5 +1,5 @@
 import { View, Image, StyleSheet, Text, Pressable } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 
 const DishListItem = ({ dish }) => {
     return (
